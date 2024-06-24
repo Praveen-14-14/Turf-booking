@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Turf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: repeating-linear-gradient(to right, green, green 71px, black 71px, black 142px);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #000;
+            color: #fff;
+            width: 381px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px; /* Add margin to top for space */
+        }
+        a {
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: black; /* Changed to black */
+            color: white; /* Changed text color to white */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 150%; /* Increase font size by 150% */
+        }
+        a:hover {
+            opacity: 0.8; /* Reduced opacity on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Turf in {{ city }}</h1>
+        {% for turf in turfs %}
+            <a href="{{ url_for('details', city=city, turf=turf) }}">{{ turf }}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>

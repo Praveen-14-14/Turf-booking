@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Turf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: repeating-linear-gradient(to right, green, green 71px, black 71px, black 142px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+        .container {
+            background-color: #000;
+            color: #fff;
+            width: 381px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input, textarea, button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            color: #000;
+        }
+        button {
+            background-color: green;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register Your Turf</h1>
+        <form method="POST" action="{{ url_for('add_turf') }}">
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="turf" placeholder="Turf Name" required>
+            <textarea name="details" placeholder="Details (location, phone no, etc.)" required></textarea>
+            <textarea name="slot" placeholder="Available Slots (comma separated)" required></textarea>
+            <button type="submit">Register Turf</button>
+        </form>
+    </div>
+</body>
+</html>
